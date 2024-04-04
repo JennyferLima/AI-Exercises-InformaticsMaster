@@ -34,10 +34,14 @@
         <temFabricante rdf:resource="#VinicolaA"/>
         <temRegiaoOrigem rdf:resource="#Regiao1"/>
         <temColoracao rdf:resource="#Tinto"/>
-        <acompanhaTipoComida rdf:resource="#Comida1"/>
+        <acompanhaTipoComida rdf:resource="#Peixes"/>
     </Vinho>
     
-    <!-- Outros Individuals -->
-    <!-- Definição de Tipo de Uva, Fabricante, Região de Origem, Coloração e Tipo de Comida -->
+    <!-- Mais instâncias de Vinho, TipoUva, Fabricante, RegiaoOrigem, Coloracao e TipoComida -->
+    
+    <!-- Instâncias de TipoComida -->
+    <TipoComida rdf:about="#Peixes"/>
+    <TipoComida rdf:about="#Grelhados"/>
+    <TipoComida rdf:about="#Massas"/>
     
 </rdf:RDF>
