@@ -1,139 +1,32 @@
 <?xml version="1.0"?>
-<!DOCTYPE rdf:RDF [
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
-]>
 
-<rdf:RDF xmlns="http://www.example.org/vinho_comida.owl#"
-     xml:base="http://www.example.org/vinho_comida.owl"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-     
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.semanticweb.org/ontology#"
+    xml:base="http://www.semanticweb.org/ontology"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
     <!-- Classes -->
-    <owl:Class rdf:about="#Vinho">
-        <rdfs:label>Vinho</rdfs:label>
-        <rdfs:comment>Classe que representa um tipo de vinho.</rdfs:comment>
-    </owl:Class>
-    
-    <owl:Class rdf:about="#TipoUva">
-        <rdfs:label>TipoUva</rdfs:label>
-        <rdfs:comment>Classe que representa um tipo de uva.</rdfs:comment>
-    </owl:Class>
-    
-    <owl:Class rdf:about="#Fabricante">
-        <rdfs:label>Fabricante</rdfs:label>
-        <rdfs:comment>Classe que representa o fabricante de um vinho.</rdfs:comment>
-    </owl:Class>
-    
-    <owl:Class rdf:about="#RegiaoOrigem">
-        <rdfs:label>RegiaoOrigem</rdfs:label>
-        <rdfs:comment>Classe que representa a região de origem de um vinho.</rdfs:comment>
-    </owl:Class>
-    
-    <owl:Class rdf:about="#Coloracao">
-        <rdfs:label>Coloracao</rdfs:label>
-        <rdfs:comment>Classe que representa a coloração de um vinho.</rdfs:comment>
-    </owl:Class>
-    
-    <owl:Class rdf:about="#TipoComida">
-        <rdfs:label>TipoComida</rdfs:label>
-        <rdfs:comment>Classe que representa um tipo de comida.</rdfs:comment>
-    </owl:Class>
-    
+    <owl:Class rdf:about="#Vinho"/>
+    <owl:Class rdf:about="#Comida"/>
+
     <!-- Propriedades -->
-    <owl:ObjectProperty rdf:about="#temTipoUva">
-        <rdfs:label>temTipoUva</rdfs:label>
-        <rdfs:comment>Propriedade que relaciona um vinho com o seu tipo de uva.</rdfs:comment>
-        <rdfs:domain rdf:resource="#Vinho"/>
-        <rdfs:range rdf:resource="#TipoUva"/>
-    </owl:ObjectProperty>
-    
-    <owl:ObjectProperty rdf:about="#temFabricante">
-        <rdfs:label>temFabricante</rdfs:label>
-        <rdfs:comment>Propriedade que relaciona um vinho com o seu fabricante.</rdfs:comment>
-        <rdfs:domain rdf:resource="#Vinho"/>
-        <rdfs:range rdf:resource="#Fabricante"/>
-    </owl:ObjectProperty>
-    
-    <owl:ObjectProperty rdf:about="#temRegiaoOrigem">
-        <rdfs:label>temRegiaoOrigem</rdfs:label>
-        <rdfs:comment>Propriedade que relaciona um vinho com a sua região de origem.</rdfs:comment>
-        <rdfs:domain rdf:resource="#Vinho"/>
-        <rdfs:range rdf:resource="#RegiaoOrigem"/>
-    </owl:ObjectProperty>
-    
-    <owl:ObjectProperty rdf:about="#temColoracao">
-        <rdfs:label>temColoracao</rdfs:label>
-        <rdfs:comment>Propriedade que relaciona um vinho com a sua coloração.</rdfs:comment>
-        <rdfs:domain rdf:resource="#Vinho"/>
-        <rdfs:range rdf:resource="#Coloracao"/>
-    </owl:ObjectProperty>
-    
-    <owl:ObjectProperty rdf:about="#acompanhaTipoComida">
-        <rdfs:label>acompanhaTipoComida</rdfs:label>
-        <rdfs:comment>Propriedade que relaciona um vinho com o tipo de comida que acompanha.</rdfs:comment>
-        <rdfs:domain rdf:resource="#Vinho"/>
-        <rdfs:range rdf:resource="#TipoComida"/>
-    </owl:ObjectProperty>
-    
-    <!-- Instâncias -->
-    <!-- Exemplo de instância de Vinho -->
-    <Vinho rdf:about="#Vinho_1">
-        <temTipoUva rdf:resource="#TipoUva_CabernetSauvignon"/>
-        <temFabricante rdf:resource="#Fabricante_XYZ"/>
-        <temRegiaoOrigem rdf:resource="#RegiaoOrigem_Bordeaux"/>
-        <temColoracao rdf:resource="#Coloracao_Tinto"/>
-        <acompanhaTipoComida rdf:resource="#TipoComida_CarnesGrelhadas"/>
-    </Vinho>
-    
-    <!-- Exemplo de instância de TipoUva -->
-    <TipoUva rdf:about="#TipoUva_CabernetSauvignon">
-        <rdfs:label>Cabernet Sauvignon</rdfs:label>
-    </TipoUva>
-    
-    <!-- Exemplo de instância de Fabricante -->
-    <Fabricante rdf:about="#Fabricante_XYZ">
-        <rdfs:label>Fabricante XYZ</rdfs:label>
-    </Fabricante>
-    
-    <!-- Exemplo de instância de RegiaoOrigem -->
-    <RegiaoOrigem rdf:about="#RegiaoOrigem_Bordeaux">
-        <rdfs:label>Bordeaux</rdfs:label>
-    </RegiaoOrigem>
-    
-    <!-- Exemplo de instância de Coloracao -->
-    <Coloracao rdf:about="#Coloracao_Tinto">
-        <rdfs:label>Tinto</rdfs:label>
-    </Coloracao>
-    
-    <!-- Exemplo de instância de TipoComida -->
-    <TipoComida rdf:about="#TipoComida_CarnesGrelhadas">
-        <rdfs:label>Carnes Grelhadas</rdfs:label>
-    </TipoComida>
-    
-    <!-- Instâncias adicionais para colorações e tipos de comida -->
-    <Coloracao rdf:about="#Coloracao_Branco">
-        <rdfs:label>Branco</rdfs:label>
-    </Coloracao>
-    
-    <Coloracao rdf:about="#Coloracao_Rosé">
-        <rdfs:label>Rosé</rdfs:label>
-    </Coloracao>
-    
-    <TipoComida rdf:about="#TipoComida_Peixes">
-        <rdfs:label>Peixes</rdfs:label>
-    </TipoComida>
-    
-    <TipoComida rdf:about="#TipoComida_Massas">
-        <rdfs:label>Massas</rdfs:label>
-    </TipoComida>
-    
-    <TipoComida rdf:about="#TipoComida_Grelhados">
-        <rdfs:label>Grelhados</rdfs:label>
-    </TipoComida>
-    
+    <owl:ObjectProperty rdf:about="#acompanha"/>
+    <owl:DatatypeProperty rdf:about="#tipoUva"/>
+    <owl:DatatypeProperty rdf:about="#fabricante"/>
+    <owl:DatatypeProperty rdf:about="#regiaoOrigem"/>
+    <owl:DatatypeProperty rdf:about="#coloracao"/>
+    <owl:DatatypeProperty rdf:about="#tipoComida"/>
+
+    <!-- Vocabulário -->
+    <Vinho rdf:about="#Vinho"/>
+    <Comida rdf:about="#Comida"/>
+    <acompanha rdf:about="#acompanha"/>
+    <tipoUva rdf:about="#tipoUva"/>
+    <fabricante rdf:about="#fabricante"/>
+    <regiaoOrigem rdf:about="#regiaoOrigem"/>
+    <coloracao rdf:about="#coloracao"/>
+    <tipoComida rdf:about="#tipoComida"/>
 </rdf:RDF>
