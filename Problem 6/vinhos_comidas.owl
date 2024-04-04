@@ -1,11 +1,4 @@
 <?xml version="1.0"?>
-<!DOCTYPE rdf:RDF [
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#">
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#">
-]>
-
 <rdf:RDF xmlns="http://www.example.org/vinho_comida.owl#"
      xml:base="http://www.example.org/vinho_comida.owl"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -83,6 +76,7 @@
     <!-- Instâncias -->
     <!-- Exemplo de instância de Vinho -->
     <Vinho rdf:about="#Vinho_1">
+        <rdfs:label>Vinho Tinto</rdfs:label>
         <temTipoUva rdf:resource="#TipoUva_CabernetSauvignon"/>
         <temFabricante rdf:resource="#Fabricante_XYZ"/>
         <temRegiaoOrigem rdf:resource="#RegiaoOrigem_Bordeaux"/>
