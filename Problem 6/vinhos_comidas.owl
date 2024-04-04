@@ -37,7 +37,40 @@
         <acompanhaTipoComida rdf:resource="#Peixes"/>
     </Vinho>
     
-    <!-- Outros Individuals -->
-    <!-- Definição de Tipo de Uva, Fabricante, Região de Origem, Coloração e Tipo de Comida -->
+    <Vinho rdf:about="#Vinho2">
+        <temTipoUva rdf:resource="#CabernetSauvignon"/>
+        <temFabricante rdf:resource="#VinicolaB"/>
+        <temRegiaoOrigem rdf:resource="#Regiao2"/>
+        <temColoracao rdf:resource="#Tinto"/>
+        <acompanhaTipoComida rdf:resource="#Grelhados"/>
+    </Vinho>
     
+    <Vinho rdf:about="#Vinho3">
+        <temTipoUva rdf:resource="#Merlot"/>
+        <temFabricante rdf:resource="#VinicolaC"/>
+        <temRegiaoOrigem rdf:resource="#Regiao3"/>
+        <temColoracao rdf:resource="#Rosé"/>
+        <acompanhaTipoComida rdf:resource="#Massas"/>
+    </Vinho>
+    
+    <!-- Outras instâncias de TipoUva, Fabricante, RegiaoOrigem, Coloracao e TipoComida -->
+    <TipoUva rdf:about="#Chardonnay"/>
+    <TipoUva rdf:about="#CabernetSauvignon"/>
+    <TipoUva rdf:about="#Merlot"/>
+    
+    <Fabricante rdf:about="#VinicolaA"/>
+    <Fabricante rdf:about="#VinicolaB"/>
+    <Fabricante rdf:about="#VinicolaC"/>
+    
+    <RegiaoOrigem rdf:about="#Regiao1"/>
+    <RegiaoOrigem rdf:about="#Regiao2"/>
+    <RegiaoOrigem rdf:about="#Regiao3"/>
+    
+    <Coloracao rdf:about="#Branco"/>
+    <Coloracao rdf:about="#Tinto"/>
+    <Coloracao rdf:about="#Rosé"/>
+    
+    <TipoComida rdf:about="#Peixes"/>
+    <TipoComida rdf:about="#Grelhados"/>
+    <TipoComida rdf:about="#Massas"/>
 </rdf:RDF>
