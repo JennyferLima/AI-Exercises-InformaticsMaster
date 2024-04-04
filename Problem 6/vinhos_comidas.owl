@@ -30,18 +30,14 @@
     
     <!-- Individuals -->
     <Vinho rdf:about="#Vinho1">
-        <temTipoUva rdf:resource="#CabernetSauvignon"/>
+        <temTipoUva rdf:resource="#Chardonnay"/>
         <temFabricante rdf:resource="#VinicolaA"/>
         <temRegiaoOrigem rdf:resource="#Regiao1"/>
-        <temColoracao rdf:resource="#Tinto"/>
+        <temColoracao rdf:resource="#Branco"/>
         <acompanhaTipoComida rdf:resource="#Peixes"/>
     </Vinho>
     
-    <!-- Mais instâncias de Vinho, TipoUva, Fabricante, RegiaoOrigem, Coloracao e TipoComida -->
-    
-    <!-- Instâncias de TipoComida -->
-    <TipoComida rdf:about="#Peixes"/>
-    <TipoComida rdf:about="#Grelhados"/>
-    <TipoComida rdf:about="#Massas"/>
+    <!-- Outros Individuals -->
+    <!-- Definição de Tipo de Uva, Fabricante, Região de Origem, Coloração e Tipo de Comida -->
     
 </rdf:RDF>
