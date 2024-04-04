@@ -1,32 +1,43 @@
 <?xml version="1.0"?>
-
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns="http://www.semanticweb.org/ontology#"
-    xml:base="http://www.semanticweb.org/ontology"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2024/wine_ontology#"
+     xml:base="http://www.semanticweb.org/ontologies/2024/wine_ontology"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2024/wine_ontology"/>
+    
     <!-- Classes -->
     <owl:Class rdf:about="#Vinho"/>
-    <owl:Class rdf:about="#Comida"/>
-
+    <owl:Class rdf:about="#TipoUva"/>
+    <owl:Class rdf:about="#Fabricante"/>
+    <owl:Class rdf:about="#RegiaoOrigem"/>
+    <owl:Class rdf:about="#Coloracao"/>
+    <owl:Class rdf:about="#TipoComida"/>
+    
     <!-- Propriedades -->
-    <owl:ObjectProperty rdf:about="#acompanha"/>
-    <owl:DatatypeProperty rdf:about="#tipoUva"/>
-    <owl:DatatypeProperty rdf:about="#fabricante"/>
-    <owl:DatatypeProperty rdf:about="#regiaoOrigem"/>
-    <owl:DatatypeProperty rdf:about="#coloracao"/>
-    <owl:DatatypeProperty rdf:about="#tipoComida"/>
-
-    <!-- Vocabulário -->
-    <Vinho rdf:about="#Vinho"/>
-    <Comida rdf:about="#Comida"/>
-    <acompanha rdf:about="#acompanha"/>
-    <tipoUva rdf:about="#tipoUva"/>
-    <fabricante rdf:about="#fabricante"/>
-    <regiaoOrigem rdf:about="#regiaoOrigem"/>
-    <coloracao rdf:about="#coloracao"/>
-    <tipoComida rdf:about="#tipoComida"/>
+    <owl:ObjectProperty rdf:about="#temTipoUva"/>
+    <owl:ObjectProperty rdf:about="#temFabricante"/>
+    <owl:ObjectProperty rdf:about="#temRegiaoOrigem"/>
+    <owl:ObjectProperty rdf:about="#temColoracao"/>
+    <owl:ObjectProperty rdf:about="#acompanhaTipoComida"/>
+    
+    <!-- Individuals -->
+    <Vinho rdf:about="#Vinho1">
+        <temTipoUva rdf:resource="#CabernetSauvignon"/>
+        <temFabricante rdf:resource="#VinicolaA"/>
+        <temRegiaoOrigem rdf:resource="#Regiao1"/>
+        <temColoracao rdf:resource="#Tinto"/>
+        <acompanhaTipoComida rdf:resource="#Comida1"/>
+    </Vinho>
+    
+    <!-- Outros Individuals -->
+    <!-- Definição de Tipo de Uva, Fabricante, Região de Origem, Coloração e Tipo de Comida -->
+    
 </rdf:RDF>
