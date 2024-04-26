@@ -10,8 +10,9 @@ The exercise list aims to explore different techniques and tools in Artificial I
 
 ## Repository Structure
 
-Problems: Contains the statements of each problem proposed by Professor Evandro Barros and Xu Yang.
-Solutions: Each problem has a corresponding folder with its solution in Python.
+- Problems: Contains the statements of each problem proposed by Professor Evandro Barros and Xu Yang.
+
+- Solutions: Each problem has a corresponding folder with its solution in Python.
 
 *Please note that the description of each problem is available in the Python documentation itself, at the beginning of each file.* 
 
