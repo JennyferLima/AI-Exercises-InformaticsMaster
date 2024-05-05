@@ -27,12 +27,10 @@ Original file is located at
 
 \\
 
-#### Problem 3: You can suggest a problem, proposing a System similar to the ones that were requested in Problem 1 or Problem 2, sending the specification to me analyze and decide on the recommendation.
-
 ---
 
 
-### **This notebook only contains the solution to problem 1.**
+**This notebook only contains the solution to problem 1.**
 """
 
 # Install the required libraries
@@ -43,24 +41,24 @@ from pgmpy.models import BayesianNetwork
 from pgmpy.factors.discrete import TabularCPD
 from pgmpy.inference import VariableElimination
 
-# Define os nomes de estado para os sintomas
+# Define the state names for the symptoms
 state_names = {'Symptom1': ['Absent', 'Present'],
                'Symptom2': ['Absent', 'Present'],
                'Symptom3': ['Absent', 'Present'],
                'Diagnosis': ['Negative', 'Positive']}
 
-# Define a estrutura da rede Bayesiana
+# Define the structure of the Bayesian network
 structure = [('Symptom1', 'Diagnosis'), ('Symptom2', 'Diagnosis'), ('Symptom3', 'Diagnosis')]
 
-# Constrói a rede Bayesiana
+# Build the Bayesian network
 model = BayesianNetwork(structure)
 
-# Define as distribuições de probabilidade condicional (CPDs) para os sintomas
+# Define the conditional probability distributions (CPDs) for the symptoms
 cpd_symptom1 = TabularCPD(variable='Symptom1', variable_card=2, values=[[0.5], [0.5]], state_names=state_names)
 cpd_symptom2 = TabularCPD(variable='Symptom2', variable_card=2, values=[[0.6], [0.4]], state_names=state_names)
 cpd_symptom3 = TabularCPD(variable='Symptom3', variable_card=2, values=[[0.7], [0.3]], state_names=state_names)
 
-# Define CPD para o Diagnóstico
+# Define CPD for the Diagnosis
 cpd_diagnosis = TabularCPD(variable='Diagnosis', variable_card=2,
                             values=[[0.8, 0.2, 0.6, 0.4, 0.5, 0.5, 0.3, 0.7],  # Probabilidade de diagnóstico dado os sintomas
                                     [0.2, 0.8, 0.4, 0.6, 0.5, 0.5, 0.7, 0.3]],
@@ -68,26 +66,26 @@ cpd_diagnosis = TabularCPD(variable='Diagnosis', variable_card=2,
                             evidence_card=[2, 2, 2],
                             state_names=state_names)
 
-# Adiciona CPDs ao modelo
+# Add CPDs to the model
 model.add_cpds(cpd_symptom1, cpd_symptom2, cpd_symptom3, cpd_diagnosis)
 
-# Verifica a consistência do modelo
+# Check the model consistency
 model.check_model()
 
-# Realiza a inferência
+# Perform inference
 inference = VariableElimination(model)
 
-# Função para realizar o diagnóstico com base nos sintomas observados
+# Function to perform diagnosis based on the observed symptoms
 def perform_diagnosis(symptom1, symptom2, symptom3):
     evidence = {'Symptom1': symptom1, 'Symptom2': symptom2, 'Symptom3': symptom3}
     probability = inference.query(variables=['Diagnosis'], evidence=evidence)
     return probability
 
-# Define os dados dos sintomas
+# Define symptom data
 symptom1 = 'Present'
 symptom2 = 'Absent'
 symptom3 = 'Present'
 
-# Obtém o diagnóstico
+# Get the diagnosis
 result = perform_diagnosis(symptom1, symptom2, symptom3)
-print("Probabilidade de Diagnóstico:", result)
+print("Probability of Diagnosis:", result)
